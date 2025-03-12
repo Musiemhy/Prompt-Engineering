@@ -50,7 +50,7 @@ Type:""",
 )
 
 question_input = {"question": "How would you design a scalable database system?"}
-print("Few-Shot Learning Response:", safe_invoke(few_shot_prompt.format(**question_input)))
+print("3.1, Few-Shot Learning Response:", safe_invoke(few_shot_prompt.format(**question_input)))
 
 # 2. Chain-of-Thought (CoT) Prompting - Debugging a Python script
 cot_prompt = PromptTemplate(
@@ -67,7 +67,7 @@ However, the function is not returning the correct output for factorial(0). Iden
 Let's think step by step.""",
 )
 
-print("Chain-of-Thought Response: \n", safe_invoke(cot_prompt.format()))
+print("3.2, Chain-of-Thought Response: \n", safe_invoke(cot_prompt.format()))
 
 # 3. Self-Consistency (Multiple Runs) - Legal Document Classification
 sc_prompt = PromptTemplate(
@@ -82,7 +82,7 @@ responses = []
 for _ in range(2):
     responses.append(safe_invoke(sc_prompt.format()))
     time.sleep(10) # Delay between multiple runs to avoid quota exhaustion
-print("Self-Consistency Responses:", responses)
+print("3.3, Self-Consistency Responses:", responses)
 
 # 4. Generate Knowledge Prompting - Turing Test
 knowledge_prompt = PromptTemplate(
@@ -104,7 +104,7 @@ Answer:""",
     input_variables=["knowledge"]
 )
 
-print("Generate Knowledge Response:", safe_invoke(final_prompt.format(knowledge=knowledge)))
+print("3.4, Generate Knowledge Response:", safe_invoke(final_prompt.format(knowledge=knowledge)))
 
 # 5. Program-aided Language Model (PAL) - Data Analysis
 pal_prompt = PromptTemplate(
@@ -116,7 +116,7 @@ Python Code:""",
 )
 
 code_response = safe_invoke(pal_prompt.format())
-print("PAL Generated Code: \n", code_response)
+print("3.5, PAL Generated Code: \n", code_response)
 
 # Extract and execute the Python code safely
 cleaned_code = re.sub(r"```python|```", "", code_response).strip()

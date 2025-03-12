@@ -16,7 +16,7 @@ This is a repo for training task on Prompt Engineering given to me at iCog-Labs.
 4. **_Generate Knowledge Prompting_**  
    **Usecase used:** Generates background knowledge before answering a question—in this case, explaining what the Turing test is used for.
 
-5. **\*Program-aided Language Model (PAL)** \*
+5. **Program-aided Language Model (PAL)**
    **Usecase used:** Generates Python code to perform a data analysis task (calculating the average temperature) and then executes the code after cleaning any Markdown formatting.
 
 ### Note
